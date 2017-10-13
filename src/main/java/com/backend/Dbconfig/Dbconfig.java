@@ -19,11 +19,17 @@ package com.backend.Dbconfig;
 import com.backend.DAO.CategoryDAO;
 import com.backend.DAO.CategoryDAOImpl;
 import com.backend.DAO.ProductDAO;
-	import com.backend.DAO.ProductDAOImpl;
+import com.backend.DAO.ProductDAOImpl;
+import com.backend.DAO.UserDAO;
+import com.backend.DAO.UserDAOImpl;
+import com.backend.model.Category;
 import com.backend.model.Product;
+import com.backend.model.User;
+
+
 
 	@Configuration
-	@ComponentScan("com.backend")
+	@ComponentScan("com.backend.*")
 	@EnableTransactionManagement
 	@Component
 
@@ -58,7 +64,9 @@ import com.backend.model.Product;
 				LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 				sessionBuilder.addProperties(getHibernateProperties());
 				sessionBuilder.addAnnotatedClass(Product.class);
-				sessionBuilder.scanPackages("com.backend");
+				sessionBuilder.addAnnotatedClass(Category.class);
+				sessionBuilder.addAnnotatedClass(User.class);
+				sessionBuilder.scanPackages("com.backend.*");
 				System.out.println("Session");
 				
 				return sessionBuilder.buildSessionFactory();
@@ -72,19 +80,27 @@ import com.backend.model.Product;
 				System.out.println("Transaction");
 				return transactionManager;
 			}
-			
-		//Factory Design pattern
 		@Autowired
 		@Bean(name = "productDAO")
 		public ProductDAO getProductDAO(SessionFactory sessionFactory) 
-		{
-		    return new ProductDAOImpl(sessionFactory);
-		    
-		}
+			{
+			    return new ProductDAOImpl(sessionFactory);
+			}	
+		
+		
 		@Autowired
 		@Bean(name = "categoryDAO")
 		public CategoryDAO getCategoryDAO(SessionFactory sessionFactory) 
 		{
 		    return new CategoryDAOImpl(sessionFactory);
 		}
+		
+		@Autowired
+		@Bean(name = "userDAO")
+		public UserDAO getUserDAO(SessionFactory sessionFactory) 
+		{
+		    return new UserDAOImpl(sessionFactory);
+		}
+		
 }
+
