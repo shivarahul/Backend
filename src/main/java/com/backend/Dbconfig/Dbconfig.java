@@ -5,8 +5,8 @@ package com.backend.Dbconfig;
 
 	import javax.sql.DataSource;
 
-	import org.hibernate.SessionFactory;
-	import org.springframework.beans.factory.annotation.Autowired;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.context.annotation.Bean;
 	import org.springframework.context.annotation.ComponentScan;
 	import org.springframework.context.annotation.Configuration;
@@ -16,15 +16,23 @@ package com.backend.Dbconfig;
 	import org.springframework.stereotype.Component;
 	import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.backend.DAO.CartDAO;
+import com.backend.DAO.CartDAOImpl;
 import com.backend.DAO.CategoryDAO;
 import com.backend.DAO.CategoryDAOImpl;
 import com.backend.DAO.ProductDAO;
 import com.backend.DAO.ProductDAOImpl;
+import com.backend.DAO.SupplierDAO;
+import com.backend.DAO.SupplierDAOImpl;
 import com.backend.DAO.UserDAO;
 import com.backend.DAO.UserDAOImpl;
+import com.backend.model.Cart;
 import com.backend.model.Category;
 import com.backend.model.Product;
+import com.backend.model.Supplier;
 import com.backend.model.User;
+
+
 
 
 
@@ -58,7 +66,6 @@ import com.backend.model.User;
 
 			}
 
-			@Autowired
 			@Bean(name = "sessionFactory")
 			public SessionFactory getSessionFactory(DataSource dataSource) {
 				LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
@@ -66,6 +73,8 @@ import com.backend.model.User;
 				sessionBuilder.addAnnotatedClass(Product.class);
 				sessionBuilder.addAnnotatedClass(Category.class);
 				sessionBuilder.addAnnotatedClass(User.class);
+				sessionBuilder.addAnnotatedClass(Supplier.class);
+				sessionBuilder.addAnnotatedClass(Cart.class);
 				sessionBuilder.scanPackages("com.backend.*");
 				System.out.println("Session");
 				
@@ -99,8 +108,19 @@ import com.backend.model.User;
 		@Bean(name = "userDAO")
 		public UserDAO getUserDAO(SessionFactory sessionFactory) 
 		{
-		    return new UserDAOImpl(sessionFactory);
+		    return (UserDAO) new UserDAOImpl(sessionFactory);
 		}
-		
+		@Autowired
+		@Bean(name = "supplierDAO")
+		public SupplierDAO getSupplierDAO(SessionFactory sessionFactory) 
+		{
+		    return new SupplierDAOImpl(sessionFactory);
+		}
+		@Autowired
+		@Bean(name = "cartDAO")
+		public CartDAO getCartDAO(SessionFactory sessionFactory) 
+		{
+		    return new CartDAOImpl(sessionFactory);
+		}
 }
 
