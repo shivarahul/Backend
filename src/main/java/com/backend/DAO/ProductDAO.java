@@ -1,14 +1,18 @@
 package com.backend.DAO;
 
+import java.util.List;
+
+import com.backend.model.Category;
 import com.backend.model.Product;
+
+
 
 public interface ProductDAO 
 {
-	public boolean createProduct(Product product);
-	
-	public boolean getProduct(int id);
-	
-	public boolean updateProduct(Product product);
-	
-	public boolean deleteProduct(int id);
+
+
+	public boolean saveProduct(Product product);
+	public List<Product> list();
+	public Product getProductById(int product_id);
+	public Product removeProducyById(int product_id);
 }
