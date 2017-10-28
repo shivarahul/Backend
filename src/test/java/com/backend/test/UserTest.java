@@ -37,20 +37,21 @@ public class UserTest
 	}
 
 @Test
-public void createUser()
+public void saveUser()
 {
 	User user=new User();
-    user.setMailid("avcfd@gmail.com");
-    user.setAddress("hyd");
-    user.setPassword("54321");
-    user.setRole("assistant manager");
-    user.setUsername("Rohith");
-    user.setCustomername("prakash");
-   
-	boolean flag=userDAO.createUser(user);
+    //user.setId(24);
+    user.setEmail("rahul@gmail.com");
+    user.setFirstName("Rahul");
+    user.setEnabled(true);
+    user.setLastName("shiva");
+    user.setPassword("rahul");
+    user.setRole("ROLE_ADMIN");
+    user.setPhone("nokia");
+ 
+	boolean flag=userDAO.saveOrUpdate(user);
 	assertEquals("createUserTestCase", true, flag);
 }
 }
-
 
 */

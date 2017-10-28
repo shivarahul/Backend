@@ -1,21 +1,18 @@
 package com.backend.DAO;
 
-import java.util.Iterator;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Criteria;
-import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.backend.model.Category;
 
-@SuppressWarnings("deprecation")
-@Repository
 public class CategoryDAOImpl implements CategoryDAO {
-	
+
 	
 	@Autowired
 	SessionFactory sessionFactory;
@@ -28,7 +25,7 @@ public class CategoryDAOImpl implements CategoryDAO {
 	
 	@Transactional
 	public boolean saveCategory(Category category) {
-		
+		// TODO Auto-generated method stub
 
 		 sessionFactory.getCurrentSession().saveOrUpdate(category);
 		
@@ -36,12 +33,9 @@ public class CategoryDAOImpl implements CategoryDAO {
 		
 		 return true;
 	}
-	
-
-
-
 	@Transactional
 	public List<Category> list() {
+		// TODO Auto-generated method stub
 		@SuppressWarnings("unchecked")
 		List<Category> listCategory = (List<Category>) sessionFactory.getCurrentSession()
 				.createCriteria(Category.class)
@@ -49,12 +43,10 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 		return listCategory;
 	}
-
-
-
-
 	@Transactional
 	public Category getCategoryById(int category_id) {
+		// TODO Auto-generated method stub
+		
 		String hql = "from"+" Category"+" where id=" + category_id;
 		@SuppressWarnings("rawtypes")
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
@@ -72,16 +64,15 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 
 	@Transactional
+
 	public Category removeCategoryById(int category_id) {
+		// TODO Auto-generated method stub
 		Category CategoryToDelete = new Category();
 		CategoryToDelete.setCategory_id(category_id);
 		sessionFactory.getCurrentSession().delete(CategoryToDelete);
 		return CategoryToDelete;
 	}
 
+	}
 
 
-
-	
-
-}	

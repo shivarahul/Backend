@@ -1,79 +1,69 @@
 package com.backend.model;
-
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
-
-import org.springframework.stereotype.Component;
-
-@Component
 @Entity
-@Table(name="Cart_details")
-public class Cart implements Serializable{
+public class Cart {
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 2687643841200590118L;
+	@Column(name="cart_id")
 	@Id
-	@Column(name="cid")
 	@GeneratedValue
-	private int cartid;
-	
-	private int productid;
-	private String productname;
-	private double price;
-	private int quantity;
-	private String username;
-	private String status;
-	
-	
-	public int getCartid() {
-		return cartid;
-	}
-	public void setCartid(int cartid) {
-		this.cartid = cartid;
-	}
-	public int getProductid() {
-		return productid;
-	}
-	public void setProductid(int productid) {
-		this.productid = productid;
-	}
-	public String getProductname() {
-		return productname;
-	}
-	public void setProductname(String productname) {
-		this.productname = productname;
-	}
-	public double getPrice() {
-		return price;
-	}
-	public void setPrice(double price) {
-		this.price = price;
-	}
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
-	
+private int id;
+private int productid;
+private String productName;
+private double ProductPrice;
+private int productQuantity;
+private double subTotal;
+private String status;
+private int userId;
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
+public int getProductid() {
+	return productid;
+}
+public void setProductid(int productid) {
+	this.productid = productid;
+}
+public String getProductName() {
+	return productName;
+}
+public void setProductName(String productName) {
+	this.productName = productName;
+}
+public double getProductPrice() {
+	return ProductPrice;
+}
+public void setProductPrice(double productPrice) {
+	ProductPrice = productPrice;
+}
+public int getProductQuantity() {
+	return productQuantity;
+}
+public void setProductQuantity(int productQuantity) {
+	this.productQuantity = productQuantity;
+}
+public double getSubTotal() {
+	return subTotal;
+}
+public void setSubTotal(double subTotal) {
+	this.subTotal = subTotal;
+}
+public String getStatus() {
+	return status;
+}
+public void setStatus(String status) {
+	this.status = status;
+}
+public int getUserId() {
+	return userId;
+}
+public void setUserId(int userId) {
+	this.userId = userId;
+}
 
 }
