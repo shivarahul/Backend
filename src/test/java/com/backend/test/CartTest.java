@@ -37,9 +37,9 @@ public class CartTest
 	{
 		Cart cart=new Cart();
 		
-		cart.setPrice(44.2222);
+		cart.setProductid(44.2222);
 		cart.setProductid(22244);
-		cart.setProductname("choc overdose");
+		cart.setProductName("choc overdose");
 		cart.setQuantity(42);
 		cart.setStatus("good tasty");
 		cart.setUsername("rahul");
@@ -62,9 +62,9 @@ public class CartTest
 	{
 		Cart cart = new Cart();
 		cart.setCartid(10);
-		cart.setPrice(100.23);
+		cart.setProductPrice(100.23);
 		cart.setProductid(23);
-		cart.setProductname("ice cream");
+		cart.setProductName("ice cream");
 		cart.setQuantity(10);
 		cart.setStatus("y");
 		cart.setUsername("Anuroop");

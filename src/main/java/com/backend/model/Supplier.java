@@ -1,7 +1,7 @@
 package com.backend.model;
 
 import java.io.Serializable;
-import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,35 +9,30 @@ import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
 
-@Component
-@Entity
-@Table(name="Supplier_details")
-public class Supplier implements Serializable
-{
 
-	private static final long serialVersionUID = 1L;
-	@GeneratedValue
-	@Column(name="supplier_id")
+@Entity
+@Component
+@Table(name="Supplier")
+public class Supplier implements Serializable{
+
+	private static final long serialVersionUID = 3216823736209703953L;
 	@Id
-	private int id;
-	private String supplierName;
-	private String supplierAddress;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getSupplierName() {
-		return supplierName;
-	}
-	public void setSupplierName(String supplierName) {
-		this.supplierName = supplierName;
-	}
-	public String getSupplierAddress() {
-		return supplierAddress;
-	}
-	public void setSupplierAddress(String supplierAddress) {
-		this.supplierAddress = supplierAddress;
-	}
+	@GeneratedValue
+private int supplier_id;
+private String supplier_Name;
+public int getSupplier_id() {
+	return supplier_id;
 }
+public void setSupplier_id(int supplier_id) {
+	this.supplier_id = supplier_id;
+}
+public String getSupplier_Name() {
+	return supplier_Name;
+}
+public void setSupplier_Name(String supplier_Name) {
+	this.supplier_Name = supplier_Name;
+}
+
+
+}
+	

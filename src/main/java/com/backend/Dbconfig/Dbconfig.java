@@ -16,18 +16,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.stereotype.Component;
 	import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.backend.DAO.CardDAO;
+import com.backend.DAO.CardDAOImpl;
 import com.backend.DAO.CartDAO;
 import com.backend.DAO.CartDAOImpl;
 import com.backend.DAO.CategoryDAO;
 import com.backend.DAO.CategoryDAOImpl;
+import com.backend.DAO.OrderDAO;
+import com.backend.DAO.OrderDAOImpl;
 import com.backend.DAO.ProductDAO;
 import com.backend.DAO.ProductDAOImpl;
 import com.backend.DAO.SupplierDAO;
 import com.backend.DAO.SupplierDAOImpl;
 import com.backend.DAO.UserDAO;
 import com.backend.DAO.UserDAOImpl;
+import com.backend.model.Card;
 import com.backend.model.Cart;
 import com.backend.model.Category;
+import com.backend.model.Order;
 import com.backend.model.Product;
 import com.backend.model.Supplier;
 import com.backend.model.User;
@@ -75,6 +81,8 @@ import com.backend.model.User;
 				sessionBuilder.addAnnotatedClass(User.class);
 				sessionBuilder.addAnnotatedClass(Supplier.class);
 				sessionBuilder.addAnnotatedClass(Cart.class);
+				sessionBuilder.addAnnotatedClasses(Card.class);
+				sessionBuilder.addAnnotatedClasses(Order.class);
 				sessionBuilder.scanPackages("com.backend.*");
 				System.out.println("Session");
 				
@@ -122,5 +130,20 @@ import com.backend.model.User;
 		{
 		    return new CartDAOImpl(sessionFactory);
 		}
+		
+		@Autowired
+		@Bean(name = "cardDAO")
+		public CardDAO getCardDAO(SessionFactory sessionFactory) 
+		{
+		    return new CardDAOImpl(sessionFactory);
+		}
+		@Autowired
+		@Bean(name = "orderDAO")
+		public OrderDAO getOrderDAO(SessionFactory sessionFactory) 
+		{
+		    return new OrderDAOImpl(sessionFactory);
+		}
+	
+		
 }
 

@@ -46,7 +46,7 @@ public void createProduct()
 	//boolean flag=productDAO.createProduct(p);
 	//assertEquals("createProductTestCase", true, flag);
 }
-@Ignore
+/*@Ignore
 @Test
 public void retrieveProduct()
 {
@@ -71,7 +71,6 @@ public void updateProduct1()
 	Product product = new Product();
 	//boolean flag=productDAO.updateProduct(product);
 	//assertEquals("createProductTestCase", true, flag);
-}
-}
+}*/
 
-*/
+
