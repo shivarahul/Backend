@@ -100,10 +100,13 @@
                        </a>
                         
                         </td>
-                        <td>
-                        <button type="button" class="btn btn-success">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
-                        </button></td>
+                         <td>
+                        <a href="checkOut" class="btn btn-default">
+                            <span class="glyphicon glyphicon-play"></span> CheckOut
+                       </a>
+                        
+                        </td>
+                        
                     </tr>
                 </tbody>
             </table>

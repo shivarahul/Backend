@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.backend.frontend</groupId>
+  <groupId>com.frontend</groupId>
   <artifactId>frontend</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
   <name>frontend Maven Webapp</name>
   <url>http://maven.apache.org</url>
-    <properties>
+   <properties>
 		<jdk.version>1.8</jdk.version>
 		<spring.version>4.3.10.RELEASE</spring.version>
 		<spring.security.version>4.1.2.RELEASE</spring.security.version>
@@ -28,6 +28,29 @@
 			<artifactId>h2</artifactId>
 			<version>${h2.version}</version>
 		</dependency>
+	
+	 <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${org.slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${org.slf4j-version}</version>
+			<scope>runtime</scope>
+		</dependency>
+	
+	
+	
+	
+	
 		<!-- Spring 3 dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -46,12 +69,8 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<dependency>
-    		<groupId>org.springframework</groupId>
-    		<artifactId>spring-beans</artifactId>
-    		<version>4.3.10.RELEASE</version>
-		</dependency>
-		
+
+
 		<!-- Spring Security -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -93,29 +112,14 @@
 		</dependency>
 		<!-- Backend dependency -->
 		<dependency>
-		<groupId>com.backend</groupId>
+		  <groupId>com.backend</groupId>
   <artifactId>backendniit</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  </dependency>
+  
+		 
+		</dependency>
 		
 
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${org.slf4j-version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${org.slf4j-version}</version>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${org.slf4j-version}</version>
-			<scope>runtime</scope>
-		</dependency>
 		<!-- jstl for jsp page -->
 		<dependency>
 			<groupId>jstl</groupId>
@@ -139,7 +143,7 @@
 		
   </dependencies>
   <build>
-    <finalName>frontend</finalName>
+    <finalName>Shoppingcart</finalName>
     <plugins>
        <plugin>
             <groupId>org.apache.maven.plugins</groupId>

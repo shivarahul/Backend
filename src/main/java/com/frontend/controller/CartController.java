@@ -1,7 +1,4 @@
 package com.frontend.controller;
-
-
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -161,11 +158,9 @@ public String deleteorder(@PathVariable("id") int id, HttpSession session) {
 @RequestMapping("continue_shopping")
 public String continueshopping()
 {
-return "redirect:/";	
+	return "welcome";	
 
 }
-
-
 
 
 }

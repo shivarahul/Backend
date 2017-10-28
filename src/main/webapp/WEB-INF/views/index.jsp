@@ -67,7 +67,11 @@ ${ExistingMessage}
                         </ul>
                     </li>
                 </ul>
-                    
+                             
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="viewcart">Cart</a></li>
+               </ul>         
             </div>
         </div>
     </nav>
@@ -120,7 +124,7 @@ ${ExistingMessage}
 				<c:out value="${product.name }" />
 			</h2>
 			<div class="pi-img-wrapper">
-										<img src="/Shoppingcart/myImage/imageDisplay?id=${product.id}"
+										<img src="/frontend/myImage/imageDisplay?id=${product.id}"
 											class="img-responsive" style="width: 100px; height: 100px">
 										<div>				</div>
 			</div>
