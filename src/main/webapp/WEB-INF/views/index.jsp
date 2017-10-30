@@ -91,11 +91,11 @@ ${ExistingMessage}
   <div class="carousel-inner">
     <div class="item active">
       <img class="img-rounded" class="img-responsive center-block"
-      src="C:\Users\RAHUL SHIVA\Pictures\Saved Pictures\1.jpg" style="width:100%" "height="100%">
+      src="C:\Users\RAHUL SHIVA\Pictures\Saved Pictures\123.jpg" style="width:100%" "height="100%">
     </div>
     <div class="item">
     <img class="img-rounded" class="img-responsive center-block"
-      src="C:\Users\RAHUL SHIVA\Pictures\Saved Pictures\2.jpg" style="width:100%" "height="100%">
+      src="C:\Users\RAHUL SHIVA\Pictures\Saved Pictures\12345.jpg" style="width:100%" "height="100%">
     </div>
 
     <div class="item">
@@ -123,25 +123,25 @@ ${ExistingMessage}
 			<h2 style="color: red">
 				<c:out value="${product.name }" />
 			</h2>
-			<div class="pi-img-wrapper">
+			<div class="row">
 										<img src="/frontend/myImage/imageDisplay?id=${product.id}"
 											class="img-responsive" style="width: 100px; height: 100px">
 										<div>				</div>
 			</div>
-			<div class="col-xs-4 ">
+			<div class="row">
 				<div class="img">
 					<div class="desc">
 						<p>
 						<div class="form-group">
-							<input type="text" class="form-control" value="${product.name}"
+							<input type="text" style="width: 100px" class="form-control" value="${product.name}"
 								readonly="readonly">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control"
+							<input type="text" style="width: 100px" class="form-control"
 								value="Rs. ${product.price}" readonly="readonly">
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control"
+							<input type="text" style="width: 100px" class="form-control"
 								value="${product.description}" readonly="readonly">
 						</div>
 						<div>

@@ -14,7 +14,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
 </head>
-
+<div class="container"> 
+       <div style='position:absolute;zindex:0;left:0;top:0;width:100%;height:100%'>
+           <img src='C:\Users\RAHUL SHIVA\Pictures\Saved Pictures\12.jpg' style='width:100%;height:100%' alt='[]' />
+       </div>
+   </div>
 <body>
 <jsp:include page="header.jsp" /> 
 <h3 align="center"> LOGIN </h3>
