@@ -13,6 +13,7 @@ public class CategoryImpl implements CategoryDAO
 {
 	@Autowired
 	private SessionFactory sessionFactory;
+
 	public CategoryImpl(SessionFactory sessionFactory)
 	{
 		this.sessionFactory=sessionFactory;
