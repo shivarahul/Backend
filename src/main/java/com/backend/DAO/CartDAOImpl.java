@@ -22,8 +22,6 @@ public class CartDAOImpl implements CartDAO {
 	
 		this.sessionFactory = sessionFactory;
 	}
-
-
 	@Transactional
 	public boolean saveProductToCart(Cart cart) {
 		
